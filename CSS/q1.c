@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<string.h> 
-#include<limits.h>
 #include<stdlib.h>
 # define Max 100
 int top = -1;
@@ -57,7 +56,7 @@ int precedence(char ch)
     return -1; 
 } 
 
-int Postfix(char* expression) 
+void Postfix(char* expression) 
 { 
     int i, j;
 
@@ -71,23 +70,23 @@ int Postfix(char* expression)
 
         else if (expression[i] == ')') 
         { 
-            while (!isEmpty(arr) && print(arr) != '(') 
-                expression[++j] = pop(arr); 
-            if (!isEmpty(arr) && print(arr) != '(') 
-                return -1;             
+            while (!isEmpty() && print() != '(') 
+                expression[++j] = pop(); 
+            if (!isEmpty() && print() != '(') 
+                continue;             
             else
-                pop(arr); 
+                pop(); 
         } 
         else 
         { 
-            while (!isEmpty(arr) && precedence(expression[i]) <= precedence(print(arr))) 
-                expression[++j] = pop(arr); 
+            while (!isEmpty() && precedence(expression[i]) <= precedence(print())) 
+                expression[++j] = pop(); 
             push(expression[i]); 
         } 
 
     } 
-    while (!isEmpty(arr)) 
-        expression[++j] = pop(arr); 
+    while (!isEmpty()) 
+        expression[++j] = pop(); 
 
     expression[++j] = '\0'; 
     
