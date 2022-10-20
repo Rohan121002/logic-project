@@ -1,7 +1,7 @@
 #include<stdio.h>
-#include<string.h> 
+#include<string.h>
 #include<stdlib.h>
-# define Max 100
+# define Max 50
 int top = -1;
 char arr[Max];
 
@@ -19,24 +19,20 @@ void push(char item) {
 	top++;
 	arr[top] = item;
 }
- 
 int pop() { 
     if (isEmpty()) 
         return 0; 
            
     return arr[top--]; 
 } 
-
 int print(){ 
     if (isEmpty()) 
         return 0; 
     return arr[top]; 
 } 
-
 int checkIfOperand(char ch) {
     return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'); 
 } 
-
 int precedence(char ch) 
 { 
     switch (ch) 
@@ -94,11 +90,11 @@ void Postfix(char* expression)
 
 void reverse(char *ptr){
 
-    int size = strlen(ptr);
-    int j = size, i=0;
-    char temp[size];
+    int j = strlen(ptr), i=0;
+    char temp[strlen(ptr)];
 
-    temp[j--]='\0';
+    temp[j]='\0';
+    --j;
     while(ptr[i]!='\0')
     {
         temp[j] = ptr[i];
@@ -120,8 +116,6 @@ void brackets(char* ptr){
 }
 void InfixtoPrefix(char *ptr){
 
-    int size = strlen(ptr);
-
     reverse(ptr);
     brackets(ptr);
     Postfix(ptr);
@@ -130,14 +124,11 @@ void InfixtoPrefix(char *ptr){
 
 int main()
 {    
-    printf("The infix is: ");
-
-    char expression[] = "((a*b)+(c>d))"; 
-    printf("%s\n",expression);
+    char expression[] = "a*(b+c)>d"; 
+    printf("Given Infix : %s\n",expression);
+    
     InfixtoPrefix(expression); 
-
-    printf("The prefix is: ");
-    printf("%s\n",expression);
+    printf("The Prefix is: %s ", expression );
 
     return 0; 
 }
