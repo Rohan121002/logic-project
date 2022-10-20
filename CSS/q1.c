@@ -130,5 +130,5 @@ int main()
     InfixtoPrefix(expression); 
     printf("The Prefix is: %s ", expression );
 
-    return 0; 
+    return 0;
 }

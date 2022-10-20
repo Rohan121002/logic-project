@@ -59,5 +59,4 @@ int treefromprefix(struct node * root , char * exp){
         root -> right = emptynode('\0');
         y = treefromprefix(root -> right , exp + 1 + x);
         return (x + y + 1);
-
 }

@@ -15,7 +15,7 @@ int height(struct node * root){
   } else {
     return (leftrootheight + 1);
   }
-} 
+}
 
 int main(){
   struct node* root = emptynode('\0');
