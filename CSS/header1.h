@@ -24,6 +24,12 @@ struct node * emptynode(char item){
 
     return new;
 }
+/**
+ * @brief 
+ * @details
+ * 
+ * @param root 
+ */
 void inorder(struct node * root){
     if (root == NULL)
         return;
