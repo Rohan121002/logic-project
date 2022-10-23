@@ -3,7 +3,7 @@
 #include "header1.h" 
 /**
  * @brief It takes input of the form of prefix and prints the inorder of it.
- * @details Create a empty node, then it takes the input of the form of prefix and then converts that prefix into binary directory using the function tree from prefix and then prints the inorder using the inorder function
+ * @details Create a empty struct node root, then we gives the input of the form of prefix and then converts that prefix into rooted binary parse tree using the function tree from prefix and then prints the inorder using the inorder function
  * 
  * @return int 
  */
