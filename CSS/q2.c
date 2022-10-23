@@ -2,7 +2,8 @@
 #include<stdlib.h>
 #include"header1.h"
 /**
- * @brief 
+ * @brief converts the given prefix to a binary tree using struct
+ * @details First we create a empty node and then give it a prefix expression,then using the function tree from prefix convert it into a rooted binary tree 
  * 
  * @return int 
  */
